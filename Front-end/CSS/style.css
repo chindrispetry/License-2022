@@ -1,6 +1,9 @@
 body{
     margin: 0;
 }
+button{
+    cursor: pointer;
+}
 nav{
     display: flex;
     justify-content: space-around;
@@ -35,6 +38,7 @@ nav button,input{
     background-color: #73BBEB;
     font-size: 0.9em;
     margin-right: 20px;
+    cursor: pointer;
 
 }
 .search-box{
@@ -48,6 +52,7 @@ nav button,input{
     border-radius: 30px;
     margin-top: 10px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 .number-of-items{
     position: relative;
@@ -71,7 +76,7 @@ main{
     flex-direction: column;
     color: white;
     width: 20%;
-    height: 50%;
+    height: 390px;
     margin-right: 2%;
     margin-left: 5%;
     background-color: #6287BF;
@@ -365,6 +370,8 @@ tr{
 .login a{
     color: black;
     margin-top:5px;
+    margin-bottom: 10px;
+    text-decoration: underline;
 }
 .termeni-conditii{
     margin: 0;
@@ -377,7 +384,6 @@ tr{
     height: 15px;
 }
 .cart-with-objects{
-    display: none;
     position: absolute;
     padding: 5px;
     right: 15%;
@@ -439,17 +445,17 @@ tr{
 }
 .plaseaza-comanda{
     width: 60%;
-    height: 90%;
+    height: 80%;
     background-color:white;
     overflow-y: auto;
     margin-left: 20%;
     margin-top: 2.5%;
-    padding: 10px;
+    padding: 30px;
 }
 .date-personale{
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 90%;
 }
 .date-personale input{
     margin-top: 0;
@@ -460,7 +466,7 @@ tr{
 }
 .plaseaza-comanda-btns{
     margin-top: 50px;
-    margin-left: 65%;
+    margin-left: 70%;
 }
 .plaseaza-comanda-btns button{
     border: none;
@@ -482,4 +488,21 @@ tr{
 }
 .final{
     margin-right: 44.5%;
+}
+.pop-up-{
+    display: none;
+}
+.pop-up-yes{
+    display: block;
+}
+.close{
+    text-align: center;
+    margin-left: 95%;
+    background-color: white;
+    border-radius: 10px;
+}
+.close:hover{
+    background-color: red;
+    color:white;
+    cursor: pointer;
 }

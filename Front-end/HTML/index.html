@@ -4,6 +4,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css" />
+    <script src="../JS/index.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer ></script>
     <title>USV Shop</title>
 </head>
 <body>
@@ -15,70 +17,10 @@
             <input type="text" class="search-box" placeholder="search some text..."/>
         </div>
         <div class="nav-action">
-            <button>Autentificare</button>
-            <div>
-                <img alt="cart" src="../IMG/cart.jpg" class="cart"/>
+            <button id="auth-btn">Autentificare</button>
+            <div id = "cart-section">
+                <img alt="cart" src="../IMG/cart.jpg" class="cart" id="cart"/>
                 <span class="number-of-items">0</span>
-                <div class="cart-with-objects">
-                    <h2>Articole</h2>
-                    <div class="product-cart">
-                        <ul>
-                            <h4 class="title-product">Fulgi de Ovaz</h4>
-                            <li>Pret : 9.9 lei</li>
-                            <li>
-                                <div class="increase-decrease-cart">
-                                    <button>-</button>
-                                    <span>1</span>
-                                    <button>+</button>
-                                </div>
-                            </li>
-                            <li><span>X</span></li>
-                        </ul>
-                    </div>
-                    <div class="product-cart">
-                        <ul>
-                            <h4 class="title-product">Fulgi de Secara</h4>
-                            <li>Pret : 6.9 lei</li>
-                            <li>
-                                <div class="increase-decrease-cart">
-                                    <button>-</button>
-                                    <span>2</span>
-                                    <button>+</button>
-                                </div>
-                            </li>
-                            <li><span>X</span></li>
-                        </ul>
-                    </div>
-                    <div class="product-cart">
-                        <ul>
-                            <h4 class="title-product">Fulgi de Ovaz</h4>
-                            <li>Pret : 9.9 lei</li>
-                            <li>
-                                <div class="increase-decrease-cart">
-                                    <button>-</button>
-                                    <span>1</span>
-                                    <button>+</button>
-                                </div>
-                            </li>
-                            <li><span>X</span></li>
-                        </ul>
-                    </div>
-                    <div class="product-cart">
-                        <ul>
-                            <h4 class="title-product">Fulgi de Secara</h4>
-                            <li>Pret : 6.9 lei</li>
-                            <li>
-                                <div class="increase-decrease-cart">
-                                    <button>-</button>
-                                    <span>2</span>
-                                    <button>+</button>
-                                </div>
-                            </li>
-                            <li><span>X</span></li>
-                        </ul>
-                    </div>
-                    <button>Plaseaza Comanda</button>
-                </div>
             </div>
         </div>
     </nav>
@@ -337,46 +279,11 @@
             </div>
         </div>
     </div>
-    <div class="pop-up">
-        <form class="login">
-            <h2>Autentificare</h2>
-            <label>E-mail</label>
-            <input type="text">
-            <label>Password</label>
-            <input type="password">
-            <a href="#">Ai uitat parola?</a>
-            <a href="#">Mergi la Inregistrare !</a>
-            <button>Autentificare</button>
-        </form>
+    <div class="pop-up" id="add-content">
+    
     </div>
-    <div class="pop-up">
-        <form class="login">
-            <h2>Inregistrare</h2>
-            <div class="full-name">
-                <div class="nume">
-                    <label>Nume</label>
-                    <input type="text">
-                </div>
-                <div class="prenume">
-                    <label>Prenume</label>
-                    <input type="text">
-                </div>
-            </div>
-            <label>E-mail</label>
-            <input type="text">
-            <label>Parola</label>
-            <input type="password">
-            <label>Repetati Parola</label>
-            <input type="password">
-            <a href="#">Login</a>
-            <div class="termeni-conditii">
-                <input type="checkbox"/>
-                <p>Sunt de acord cu Termeni & Conditiile</p>
-            </div>
-            <button>Inregistrare</button>
-        </form>
-    </div>
-    <div class="pop-up">
+    
+    <div class="pop-up-">
         <form class="plaseaza-comanda">
             <h2>Plaseaza Comanada</h2>
             <h5>Datele tale personale</h5>
