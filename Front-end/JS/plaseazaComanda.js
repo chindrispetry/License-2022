@@ -2,7 +2,9 @@ sectionCart.removeChild(document.getElementById("cart-elem"));
 showForm();
 
 function showForm(){
-    
+    let sum = 0;
+
+
     let formComanda = document.createElement("form");
     formComanda.className = "plaseaza-comanda";
 
@@ -106,32 +108,26 @@ function showForm(){
     let subTitleThirth = document.createElement("h5");
     subTitleThirth.innerText = "Produsele din Cos";
 
-    let total = document.createElement("div");
-    total.className = "total";
-
-    let denumireTotal = document.createElement("h4");
-    denumireTotal.className = "title-product final";
-    denumireTotal.innerText = "Total comanda";
-
-    let priceTotal = document.createElement("h4");
-    priceTotal.className = "title-product";
-    priceTotal.innerText = "Pret : 40 lei";
-
-    total.appendChild(denumireTotal);
-    total.appendChild(priceTotal);
-
     formComanda.appendChild(subTitleThirth);
 
+    
 
-    if(arrOfProduct.length == 0){
+    let arr = JSON.parse(localStorage.getItem("products"));
+
+    let totalProdus = 0;
+
+    if(arr.length == 0){
         let empty = document.createElement("div");
         empty.innerText = "Nu exista produse in cos!"
         empty.style.color = "red";
         formComanda.appendChild(empty);
     }else{
-        for(var key in arrOfProduct)
-            productToCart(formComanda,arrOfProduct[key].nume,arrOfProduct[key].nr,arrOfProduct[key].price);
-        formComanda.appendChild(total);
+        for(var key in arr){
+            productToCart(formComanda,arr[key].title,arr[key].number,arr[key].price);
+            totalProdus += arr[key].number;
+            sum += arr[key].number * arr[key].price;
+        }
+        productToCart(formComanda,"Total Comanda",totalProdus,sum);
     }
 
     

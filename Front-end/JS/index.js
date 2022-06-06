@@ -3,6 +3,8 @@ var content = document.getElementById("add-content");
 var sectionCart = document.getElementById("cart-section");
 let body = document.querySelector("body");
 
+localStorage.setItem("products",'');
+
 // add event listener to button auth
 document.getElementById("auth-btn").addEventListener("click",()=>{
     showAutentificare();
@@ -56,14 +58,22 @@ function showCartShop(){
 
     cart.appendChild(close);
     cart.appendChild(title);
-    if(arrOfProduct.length == 0){
+
+    let val = localStorage.getItem("products");
+    let arr = [];
+    if(val.length != 0){
+        arr = JSON.parse(val);
+    }
+
+    if(arr.length == 0){
         let empty = document.createElement("div");
         empty.innerText = "Nu exista produse in cos!"
+        empty.style.textAlign = "center";
         empty.style.color = "red";
         cart.appendChild(empty);
     }else
-        for(var key in arrOfProduct){
-            productToCart(cart,arrOfProduct[key].nume,arrOfProduct[key].nr,arrOfProduct[key].price);
+        for(var key in arr){
+            productToCart(cart,arr[key].title,arr[key].number,arr[key].price);
     }
     cart.appendChild(btnComanda);
 
@@ -102,7 +112,7 @@ function productToCart(parent,nume,nr,price){
     btnPlus.innerText = "+";
 
     btnMinus.addEventListener("click",()=>{
-        if(value.innerText - 1 >= 0){
+        if(value.innerText - 1 >= 1){
             value.innerText -= 1;
             updateArray(titleProduct,value);
         }
@@ -141,7 +151,6 @@ function updateArray(denumire,val){
     for(var key in arrOfProduct){
         if(denumire.toString().localeCompare(arrOfProduct[key].nume) == 0){
             arrOfProduct[key].nr = val.innerText;
-            console.log("here");
         }
     }
 }
